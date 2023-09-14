@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="ddr4_MIG_synth_1" LaunchDir="/home/user/Work/UCMerced/cva6_ddr4/corev_apu/fpga/xilinx/ddr4_MIG/ddr4_MIG.runs/ddr4_MIG_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+
