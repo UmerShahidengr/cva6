@@ -55,8 +55,6 @@ def setup_parser_config_generator():
                       help="Data User enable ? 1 : enable, 0 : disable")
   parser.add_argument("--duser_w", type=int, default=None, choices=list(range(1,64)),
                       help="Data User Width ? [1-64]")
-  parser.add_argument("--RenameEn", type=int, default=None, choices=[0,1],
-                      help="RenameEn ? 1 : enable, 0 : disable")
   parser.add_argument("--IcacheByteSize", type=int, default=None,
                       help="Instruction cache size in bytes")
   parser.add_argument("--IcacheSetAssoc", type=int, default=None,
@@ -105,6 +103,10 @@ def setup_parser_config_generator():
                       help="Cache type (WB or WT)")
   parser.add_argument("--MmuPresent", type=int, default=None, choices=[0, 1],
                       help="Use an MMU ? 1 : enable, 0 : disable")
+  parser.add_argument("--HaltAddress", type=int, default=0x804,
+                      help="Address which the core should jump in case of a debug request.")
+  parser.add_argument("--ExceptionAddress", type=int, default=0x808,
+                      help="Address which the core should jump in case of an exception during debug mode.")
   parser.add_argument("--RvfiTrace", type=int, default=None, choices=[0, 1],
                       help="Output an RVFI trace ? 1 : enable, 0 : disable")
   return parser
@@ -131,7 +133,6 @@ MapArgsToParameter={
   "iuser_w" : "CVA6ConfigFetchUserWidth",
   "duser_en" : "CVA6ConfigDataUserEn",
   "duser_w" : "CVA6ConfigDataUserWidth",
-  "RenameEn" : "CVA6ConfigRenameEn",
   "IcacheByteSize" : "CVA6ConfigIcacheByteSize",
   "IcacheSetAssoc" : "CVA6ConfigIcacheSetAssoc",
   "IcacheLineWidth" : "CVA6ConfigIcacheLineWidth",
@@ -159,6 +160,8 @@ MapArgsToParameter={
   "MmuPresent": "CVA6ConfigMmuPresent",
   # Ignored parameters
   "ignored": "CVA6ConfigRvfiTrace",
+  "HaltAddress": "CVA6HaltAddress",
+  "ExceptionAddress": "CVA6ExceptionAddress",
 }
 MapParametersToArgs = {i:k for k, i in MapArgsToParameter.items()} #reverse map
 

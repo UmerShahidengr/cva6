@@ -37,8 +37,6 @@ package cva6_config_pkg;
     localparam CVA6ConfigDataUserEn = 0;
     localparam CVA6ConfigDataUserWidth = CVA6ConfigXlen;
 
-    localparam CVA6ConfigRenameEn = 0;
-
     localparam CVA6ConfigIcacheByteSize = 16384;
     localparam CVA6ConfigIcacheSetAssoc = 4;
     localparam CVA6ConfigIcacheLineWidth = 128;
@@ -93,6 +91,7 @@ package cva6_config_pkg;
       bit'(CVA6ConfigCExtEn),                // RVC
       bit'(CVA6ConfigFVecEn),                // XFVec
       bit'(CVA6ConfigCvxifEn),               // CvxifEn
+      bit'(CVA6ConfigZiCondExtEn),           // ZiCondExtEn
       // Extended
       bit'(0),           // RVF
       bit'(0),           // RVD
@@ -105,7 +104,9 @@ package cva6_config_pkg;
       bit'(0),           // XF8Vec
       unsigned'(0),      // NrRgprPorts
       unsigned'(0),      // NrWbPorts
-      bit'(0)            // EnableAccelerator
+      bit'(0),           // EnableAccelerator
+      64'h800,           // HaltAddress
+      64'h808            // ExceptionAddress
     } ;
 
 endpackage

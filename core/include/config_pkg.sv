@@ -31,6 +31,7 @@ package config_pkg;
       bit RVC;
       bit XFVec;
       bit CvxifEn;
+      bit RCONDEXT;
       // Calculated
       bit RVF;
       bit RVD;
@@ -44,6 +45,10 @@ package config_pkg;
       int unsigned NrRgprPorts;
       int unsigned NrWbPorts;
       bit EnableAccelerator;
+      // Debug Module
+      // address to which a hart should jump when it was requested to halt
+      logic [63:0] HaltAddress;
+      logic [63:0] ExceptionAddress;
     } cva6_cfg_t;
 
     localparam cva6_cfg_t cva6_cfg_default = {
@@ -62,6 +67,7 @@ package config_pkg;
       bit'(1),           // RVC
       bit'(0),           // XFVec
       bit'(1),           // CvxifEn
+      bit'(0),           // EnableZiCond
       // Extended
       bit'(0),           // RVF
       bit'(0),           // RVD
@@ -74,7 +80,9 @@ package config_pkg;
       bit'(0),           // XF8Vec
       unsigned'(0),      // NrRgprPorts
       unsigned'(0),      // NrWbPorts
-      bit'(0)            // EnableAccelerator
+      bit'(0),           // EnableAccelerator
+      64'h800,           // HaltAddress
+      64'h808            // ExceptionAddress
     } ;
 
     localparam cva6_cfg_t cva6_cfg_empty = {
@@ -93,6 +101,7 @@ package config_pkg;
       bit'(0),           // RVC
       bit'(0),           // XFVec
       bit'(0),           // CvxifEn
+      bit'(0),           // EnableZiCond
       // Extended
       bit'(0),           // RVF
       bit'(0),           // RVD
@@ -105,7 +114,9 @@ package config_pkg;
       bit'(0),           // XF8Vec
       unsigned'(0),      // NrRgprPorts
       unsigned'(0),      // NrWbPorts
-      bit'(0)            // EnableAccelerator
+      bit'(0),           // EnableAccelerator
+      64'h0,             // HaltAddress
+      64'h0              // ExceptionAddress
     } ;
 
 
