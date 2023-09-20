@@ -22,12 +22,14 @@ if {$::env(BOARD) eq "genesys2"} {
       add_files -fileset constrs_1 -norecurse constraints/kc705.xdc
 } elseif {$::env(BOARD) eq "vc707"} {
       add_files -fileset constrs_1 -norecurse constraints/vc707.xdc
+} elseif {$::env(BOARD) eq "ZC706"} {
+      add_files -fileset constrs_1 -norecurse constraints/ZC706.xdc
 } else {
       exit 1
 }
 
 read_ip { \
-      "xilinx/ddr4_MIG/ddr4_MIG.xci" \
+      "xilinx/xlnx_mig_7_ddr3/xlnx_mig_7_ddr3.srcs/sources_1/ip/xlnx_mig_7_ddr3/xlnx_mig_7_ddr3.xci" \
       "xilinx/xlnx_axi_clock_converter/xlnx_axi_clock_converter.srcs/sources_1/ip/xlnx_axi_clock_converter/xlnx_axi_clock_converter.xci" \
       "xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.srcs/sources_1/ip/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.xci" \
       "xilinx/xlnx_axi_dwidth_converter_dm_slave/xlnx_axi_dwidth_converter_dm_slave.srcs/sources_1/ip/xlnx_axi_dwidth_converter_dm_slave/xlnx_axi_dwidth_converter_dm_slave.xci" \
@@ -50,6 +52,10 @@ if {$::env(BOARD) eq "genesys2"} {
     set registers "../../vendor/pulp-platform/common_cells/include/common_cells/registers.svh"
 } elseif {$::env(BOARD) eq "kc705"} {
       read_verilog -sv {src/kc705.svh ../../vendor/pulp-platform/common_cells/include/common_cells/registers.svh}
+      set file "src/kc705.svh"
+      set registers "../../vendor/pulp-platform/common_cells/include/common_cells/registers.svh"
+} elseif {$::env(BOARD) eq "ZC706"} {
+      read_verilog -sv {src/ZC706.svh ../../vendor/pulp-platform/common_cells/include/common_cells/registers.svh}
       set file "src/kc705.svh"
       set registers "../../vendor/pulp-platform/common_cells/include/common_cells/registers.svh"
 } elseif {$::env(BOARD) eq "vc707"} {
