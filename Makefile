@@ -36,8 +36,8 @@ test-location  ?= output/test
 torture-logs   :=
 # custom elf bin to run with sim or sim-verilator
 elf-bin        ?= tmp/riscv-tests/build/benchmarks/dhrystone.riscv
-# board name for bitstream generation. Currently supported: kc705, genesys2, zcu102
-BOARD          ?= zcu102
+# board name for bitstream generation. Currently supported: kc705, genesys2, zcu102, ZC706
+BOARD          ?= ZC706
 # root path
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 root-dir := $(dir $(mkfile_path))
@@ -77,6 +77,10 @@ else ifeq ($(BOARD), vc707)
 else ifeq ($(BOARD), zcu102)
 	XILINX_PART              := xczu9eg-ffvb1156-2-e
 	XILINX_BOARD             := xilinx.com:zcu102:part0:3.2
+	CLK_PERIOD_NS            := 20
+else ifeq ($(BOARD), ZC706)
+	XILINX_PART              := xc7z045ffg900-2
+	XILINX_BOARD             := xilinx.com:zc706:part0:1.4
 	CLK_PERIOD_NS            := 20
 else
 $(error Unknown board - please specify a supported FPGA board)
