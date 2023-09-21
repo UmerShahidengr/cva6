@@ -105,7 +105,7 @@ module ariane_xilinx (
   output wire [3:0]    eth_txd     ,
   inout  wire          eth_mdio    ,
   output logic         eth_mdc     ,
-  output logic [ 3:0]  led         ,
+  // output logic [ 3:0]  led         ,
   input  logic [ 3:0]  sw          ,
   output logic         fan_pwm     ,
   input  logic         trst_n      ,
@@ -835,7 +835,7 @@ end
 `endif
 
 `ifdef ZC706
-  logic [7:0] unused_led;
+  logic [7:0] unused_led = 8'b00000000;
   logic [3:0] unused_switches = 4'b0000;
 `endif
 
@@ -895,7 +895,7 @@ ariane_peripherals #(
       .leds_o         ( {led[3:0], unused_led[7:4]}),
       .dip_switches_i ( {sw, unused_switches}     )
     `elsif ZC706
-      .leds_o         ( {led[3:0], unused_led[7:4]}),
+      .leds_o         (unused_led),
       .dip_switches_i ( {sw, unused_switches}     )
     `else
       .leds_o         ( led                       ),
