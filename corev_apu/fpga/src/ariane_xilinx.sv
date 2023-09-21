@@ -32,7 +32,6 @@ module ariane_xilinx (
   output logic [ 0:0]  ddr3_cs_n   ,
   output logic [ 3:0]  ddr3_dm     ,
   output logic [ 0:0]  ddr3_odt    ,
-
   output wire          eth_rst_n   ,
   input  wire          eth_rxck    ,
   input  wire          eth_rxctl   ,
@@ -49,7 +48,6 @@ module ariane_xilinx (
 `elsif KC705
   input  logic         sys_clk_p   ,
   input  logic         sys_clk_n   ,
-
   input  logic         cpu_reset   ,
   inout  logic [63:0]  ddr3_dq     ,
   inout  logic [ 7:0]  ddr3_dqs_n  ,
@@ -66,7 +64,6 @@ module ariane_xilinx (
   output logic [ 0:0]  ddr3_cs_n   ,
   output logic [ 7:0]  ddr3_dm     ,
   output logic [ 0:0]  ddr3_odt    ,
-
   output wire          eth_rst_n   ,
   input  wire          eth_rxck    ,
   input  wire          eth_rxctl   ,
@@ -83,7 +80,6 @@ module ariane_xilinx (
 `elsif ZC706
   input  logic         sys_clk_p   ,
   input  logic         sys_clk_n   ,
-
   input  logic         cpu_reset   ,
   inout  logic [63:0]  ddr3_dq     ,
   inout  logic [ 7:0]  ddr3_dqs_n  ,
@@ -100,8 +96,7 @@ module ariane_xilinx (
   output logic [ 0:0]  ddr3_cs_n   ,
   output logic [ 7:0]  ddr3_dm     ,
   output logic [ 0:0]  ddr3_odt    ,
-
-  // output wire          eth_rst_n   ,
+  output wire          eth_rst_n   ,
   input  wire          eth_rxck    ,
   input  wire          eth_rxctl   ,
   input  wire [3:0]    eth_rxd     ,

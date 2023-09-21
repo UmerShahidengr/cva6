@@ -56,7 +56,7 @@ if {$::env(BOARD) eq "genesys2"} {
       set registers "../../vendor/pulp-platform/common_cells/include/common_cells/registers.svh"
 } elseif {$::env(BOARD) eq "ZC706"} {
       read_verilog -sv {src/ZC706.svh ../../vendor/pulp-platform/common_cells/include/common_cells/registers.svh}
-      set file "src/kc705.svh"
+      set file "src/ZC706.svh"
       set registers "../../vendor/pulp-platform/common_cells/include/common_cells/registers.svh"
 } elseif {$::env(BOARD) eq "vc707"} {
       read_verilog -sv {src/vc707.svh ../../vendor/pulp-platform/common_cells/include/common_cells/registers.svh}
