@@ -96,7 +96,7 @@ module ariane_xilinx (
   output logic [ 0:0]  ddr3_cs_n   ,
   output logic [ 7:0]  ddr3_dm     ,
   output logic [ 0:0]  ddr3_odt    ,
-  output wire          eth_rst_n   ,
+  // output wire          eth_rst_n   ,
   input  wire          eth_rxck    ,
   input  wire          eth_rxctl   ,
   input  wire [3:0]    eth_rxd     ,
@@ -108,7 +108,7 @@ module ariane_xilinx (
   // output logic [ 3:0]  led         ,
   input  logic [ 3:0]  sw          ,
   output logic         fan_pwm     ,
-  input  logic         trst_n      ,
+  // input  logic         trst_n      ,
 `elsif VC707
   input  logic         sys_clk_p   ,
   input  logic         sys_clk_n   ,
@@ -837,6 +837,8 @@ end
 `ifdef ZC706
   logic [7:0] unused_led = 8'b00000000;
   logic [3:0] unused_switches = 4'b0000;
+  logic trst_n ;
+  logic eth_rst_n ;
 `endif
 
 ariane_peripherals #(

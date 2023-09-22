@@ -126,6 +126,7 @@ set_property -dict {PACKAGE_PIN M20 IOSTANDARD LVCMOS25} [get_ports { eth_txd[3]
 set_property -dict {PACKAGE_PIN U30 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[0] }]; #IO_L21N_T3_DQS_33 Sch=eth_rx_d[0]
 set_property -dict {PACKAGE_PIN L20 IOSTANDARD LVCMOS25} [get_ports { eth_rxck }]; #IO_L13P_T2_MRCC_33 Sch=eth_rx_clk
 set_property -dict {PACKAGE_PIN G20 IOSTANDARD LVCMOS25} [get_ports { eth_rxctl }]; #IO_L18P_T2_33 Sch=eth_rx_ctl
+set_property -dict {PACKAGE_PIN J21 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[0] }]; #IO_L21P_T3_DQS_33 Sch=eth_rx_d[1]
 set_property -dict {PACKAGE_PIN M19 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[1] }]; #IO_L21P_T3_DQS_33 Sch=eth_rx_d[1]
 set_property -dict {PACKAGE_PIN G19 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[2] }]; #IO_L20N_T3_33 Sch=eth_rx_d[2]
 set_property -dict {PACKAGE_PIN M17 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[3] }]; #IO_L22P_T3_33 Sch=eth_rx_d[3]
