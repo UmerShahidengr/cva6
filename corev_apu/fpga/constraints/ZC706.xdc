@@ -20,8 +20,8 @@ set_property -dict { PACKAGE_PIN AK12   IOSTANDARD LVCMOS25 } [get_ports { tms  
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets tck_IBUF]
 
 ## UART
-set_property -dict {PACKAGE_PIN C19 IOSTANDARD LVCMOS18} [get_ports tx]
-set_property -dict {PACKAGE_PIN D18 IOSTANDARD LVCMOS18} [get_ports rx]
+set_property -dict {PACKAGE_PIN Y20 IOSTANDARD LVCMOS25} [get_ports tx];    # PMOD1_4_LS
+set_property -dict {PACKAGE_PIN AA20 IOSTANDARD LVCMOS25} [get_ports rx];    # PMOD1_5_LS
 
 
 ## LEDs
@@ -112,26 +112,26 @@ set_property -dict {PACKAGE_PIN AJ13  IOSTANDARD LVCMOS25} [get_ports {sw[3]}]
 #set_property -dict {PACKAGE_PIN P27 IOSTANDARD LVCMOS33} [get_ports {sw[7]}]
 
 ## Fan Control
-set_property -dict {PACKAGE_PIN L26 IOSTANDARD LVCMOS25} [get_ports fan_pwm]
+set_property -dict {PACKAGE_PIN AB19 IOSTANDARD LVCMOS25} [get_ports fan_pwm]
 #set_property -dict { PACKAGE_PIN U22   IOSTANDARD LVCMOS33 } [get_ports { FAN_TACH }]; #IO_L22P_T3_A05_D21_14 Sch=fan_tac
 
 ## Ethernet
 # set_property -dict {PACKAGE_PIN L20 IOSTANDARD LVCMOS25} [get_ports { eth_rst_n }]; #IO_L14N_T2_SRCC_12 Sch=eth_phyrst_n
-set_property -dict {PACKAGE_PIN L19 IOSTANDARD LVCMOS25} [get_ports { eth_txck }]; #IO_L14P_T2_SRCC_33 Sch=eth_tx_clk
-set_property -dict {PACKAGE_PIN J19 IOSTANDARD LVCMOS25} [get_ports { eth_txctl }]; #IO_L20P_T3_33 Sch=eth_tx_en
-set_property -dict {PACKAGE_PIN K21 IOSTANDARD LVCMOS25} [get_ports { eth_txd[0] }]; #IO_L22N_T3_33 Sch=eth_tx_d[0]
-set_property -dict {PACKAGE_PIN K20 IOSTANDARD LVCMOS25} [get_ports { eth_txd[1] }]; #IO_L17P_T2_33 Sch=eth_tx_d[1]
-set_property -dict {PACKAGE_PIN J20 IOSTANDARD LVCMOS25} [get_ports { eth_txd[2] }]; #IO_L18N_T2_33 Sch=eth_tx_d[2]
-set_property -dict {PACKAGE_PIN M20 IOSTANDARD LVCMOS25} [get_ports { eth_txd[3] }]; #IO_L17N_T2_33 Sch=eth_tx_d[3]
-set_property -dict {PACKAGE_PIN U30 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[0] }]; #IO_L21N_T3_DQS_33 Sch=eth_rx_d[0]
-set_property -dict {PACKAGE_PIN L20 IOSTANDARD LVCMOS25} [get_ports { eth_rxck }]; #IO_L13P_T2_MRCC_33 Sch=eth_rx_clk
-set_property -dict {PACKAGE_PIN G20 IOSTANDARD LVCMOS25} [get_ports { eth_rxctl }]; #IO_L18P_T2_33 Sch=eth_rx_ctl
-set_property -dict {PACKAGE_PIN J21 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[0] }]; #IO_L21P_T3_DQS_33 Sch=eth_rx_d[1]
-set_property -dict {PACKAGE_PIN M19 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[1] }]; #IO_L21P_T3_DQS_33 Sch=eth_rx_d[1]
-set_property -dict {PACKAGE_PIN G19 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[2] }]; #IO_L20N_T3_33 Sch=eth_rx_d[2]
-set_property -dict {PACKAGE_PIN M17 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[3] }]; #IO_L22P_T3_33 Sch=eth_rx_d[3]
-set_property -dict {PACKAGE_PIN D19 IOSTANDARD LVCMOS25} [get_ports { eth_mdc }]; #IO_L23P_T3_33 Sch=eth_mdc
-set_property -dict {PACKAGE_PIN C18 IOSTANDARD LVCMOS25} [get_ports { eth_mdio }]; #IO_L23N_T3_33 Sch=eth_mdio
+#set_property -dict {PACKAGE_PIN L19 IOSTANDARD LVCMOS25} [get_ports { eth_txck }]; #IO_L14P_T2_SRCC_33 Sch=eth_tx_clk
+#set_property -dict {PACKAGE_PIN J19 IOSTANDARD LVCMOS25} [get_ports { eth_txctl }]; #IO_L20P_T3_33 Sch=eth_tx_en
+#set_property -dict {PACKAGE_PIN K21 IOSTANDARD LVCMOS25} [get_ports { eth_txd[0] }]; #IO_L22N_T3_33 Sch=eth_tx_d[0]
+#set_property -dict {PACKAGE_PIN K20 IOSTANDARD LVCMOS25} [get_ports { eth_txd[1] }]; #IO_L17P_T2_33 Sch=eth_tx_d[1]
+#set_property -dict {PACKAGE_PIN J20 IOSTANDARD LVCMOS25} [get_ports { eth_txd[2] }]; #IO_L18N_T2_33 Sch=eth_tx_d[2]
+#set_property -dict {PACKAGE_PIN M20 IOSTANDARD LVCMOS25} [get_ports { eth_txd[3] }]; #IO_L17N_T2_33 Sch=eth_tx_d[3]
+#set_property -dict {PACKAGE_PIN U30 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[0] }]; #IO_L21N_T3_DQS_33 Sch=eth_rx_d[0]
+#set_property -dict {PACKAGE_PIN L20 IOSTANDARD LVCMOS25} [get_ports { eth_rxck }]; #IO_L13P_T2_MRCC_33 Sch=eth_rx_clk
+#set_property -dict {PACKAGE_PIN G20 IOSTANDARD LVCMOS25} [get_ports { eth_rxctl }]; #IO_L18P_T2_33 Sch=eth_rx_ctl
+#set_property -dict {PACKAGE_PIN J21 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[0] }]; #IO_L21P_T3_DQS_33 Sch=eth_rx_d[1]
+#set_property -dict {PACKAGE_PIN M19 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[1] }]; #IO_L21P_T3_DQS_33 Sch=eth_rx_d[1]
+#set_property -dict {PACKAGE_PIN G19 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[2] }]; #IO_L20N_T3_33 Sch=eth_rx_d[2]
+#set_property -dict {PACKAGE_PIN M17 IOSTANDARD LVCMOS25} [get_ports { eth_rxd[3] }]; #IO_L22P_T3_33 Sch=eth_rx_d[3]
+#set_property -dict {PACKAGE_PIN D19 IOSTANDARD LVCMOS25} [get_ports { eth_mdc }]; #IO_L23P_T3_33 Sch=eth_mdc
+#set_property -dict {PACKAGE_PIN C18 IOSTANDARD LVCMOS25} [get_ports { eth_mdio }]; #IO_L23N_T3_33 Sch=eth_mdio
 
 # set_property -dict {PACKAGE_PIN AK15  IOSTANDARD LVCMOS18} [get_ports { eth_pme_b }]; #IO_L1N_T0_32 Sch=eth_pmeb
 # set_property -dict {PACKAGE_PIN AK16  IOSTANDARD LVCMOS18} [get_ports { eth_int_b }]; #IO_L1P_T0_32 Sch=eth_intb
@@ -148,10 +148,10 @@ set_clock_groups -asynchronous -group [get_clocks clk_out2_xlnx_clk_gen]
 #############################################
 ## SD Card
 #############################################
-set_property -dict {PACKAGE_PIN AJ21 IOSTANDARD LVCMOS25} [get_ports spi_clk_o]
-set_property -dict {PACKAGE_PIN AK21 IOSTANDARD LVCMOS25} [get_ports spi_ss]
-set_property -dict {PACKAGE_PIN AB21 IOSTANDARD LVCMOS25} [get_ports spi_miso]
-set_property -dict {PACKAGE_PIN AB16 IOSTANDARD LVCMOS25} [get_ports spi_mosi]
+set_property -dict {PACKAGE_PIN AJ21 IOSTANDARD LVCMOS25} [get_ports spi_clk_o];    # PMOD1_0_LS
+set_property -dict {PACKAGE_PIN AK21 IOSTANDARD LVCMOS25} [get_ports spi_ss];       # PMOD1_1_LS
+set_property -dict {PACKAGE_PIN AB21 IOSTANDARD LVCMOS25} [get_ports spi_miso];     # PMOD1_2_LS
+set_property -dict {PACKAGE_PIN AB16 IOSTANDARD LVCMOS25} [get_ports spi_mosi];     # PMOD1_3_LS
 # set_property -dict { PACKAGE_PIN P28   IOSTANDARD LVCMOS33 } [get_ports { sd_cd }]; #IO_L8N_T1_D12_14 Sch=sd_cd
 # set_property -dict { PACKAGE_PIN R29   IOSTANDARD LVCMOS33 } [get_ports { sd_cmd }]; #IO_L7N_T1_D10_14 Sch=sd_cmd
 # set_property -dict { PACKAGE_PIN R26   IOSTANDARD LVCMOS33 } [get_ports { sd_dat[0] }]; #IO_L10N_T1_D15_14 Sch=sd_dat[0]

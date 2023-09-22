@@ -97,14 +97,14 @@ module ariane_xilinx (
   output logic [ 7:0]  ddr3_dm     ,
   output logic [ 0:0]  ddr3_odt    ,
   // output wire          eth_rst_n   ,
-  input  wire          eth_rxck    ,
-  input  wire          eth_rxctl   ,
-  input  wire [3:0]    eth_rxd     ,
-  output wire          eth_txck    ,
-  output wire          eth_txctl   ,
-  output wire [3:0]    eth_txd     ,
-  inout  wire          eth_mdio    ,
-  output logic         eth_mdc     ,
+//  input  wire          eth_rxck    ,
+//  input  wire          eth_rxctl   ,
+//  input  wire [3:0]    eth_rxd     ,
+//  output wire          eth_txck    ,
+//  output wire          eth_txctl   ,
+//  output wire [3:0]    eth_txd     ,
+//  inout  wire          eth_mdio    ,
+//  output logic         eth_mdc     ,
   // output logic [ 3:0]  led         ,
   input  logic [ 3:0]  sw          ,
   output logic         fan_pwm     ,
@@ -839,6 +839,15 @@ end
   logic [3:0] unused_switches = 4'b0000;
   logic trst_n ;
   logic eth_rst_n ;
+  logic          eth_rxck    ;
+  logic          eth_rxctl   ;
+  logic [3:0]    eth_rxd     ;
+  logic          eth_txck    ;
+  logic          eth_txctl   ;
+  logic [3:0]    eth_txd     ;
+  logic          eth_mdio    ;
+  logic         eth_mdc     ;
+
 `endif
 
 ariane_peripherals #(
