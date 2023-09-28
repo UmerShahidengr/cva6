@@ -33,7 +33,7 @@ if {$::env(BOARD) eq "genesys2"} {
 } elseif {$::env(BOARD) eq "kc705"} {
     write_cfgmem -format mcs -interface SPIx4 -size 128  -loadbit "up 0x0 $bitfile" -file $mcsfile -force
 } elseif {$::env(BOARD) eq "ZC706"} {
-    write_cfgmem -format mcs -interface SPIx4 -size 128  -loadbit "up 0x0 $bitfile" -file $mcsfile -force
+    write_cfgmem -format mcs -interface SPIx1 -size 128  -loadbit "up 0x0 $bitfile" -file $mcsfile -force
 } else {
       exit 1
 }

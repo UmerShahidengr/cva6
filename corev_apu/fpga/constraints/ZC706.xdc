@@ -1,6 +1,8 @@
 ## Buttons
 set_property -dict {PACKAGE_PIN A8 IOSTANDARD LVCMOS15} [get_ports cpu_reset]
 # set_property slave_banks {32 34} [get_iobanks 33]
+# Genesys 2 has a quad SPI flash
+set_property BITSTREAM.Config.SPI_buswidth 4 [current_design]
 
 # on board differential clock, 200MHz
 set_property PACKAGE_PIN H9 [get_ports sys_clk_p]
@@ -190,8 +192,6 @@ set_property -dict {PACKAGE_PIN AB16 IOSTANDARD LVCMOS25} [get_ports spi_mosi]; 
 # set_clock_groups -asynchronous -group [get_clocks [list [get_clocks -of_objects [get_pins clk_mmcm/chipset_clk]]]] -group [get_clocks -filter { NAME =~  "*sd*" }]
 
 
-# Genesys 2 has a quad SPI flash
-set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 
 ## JTAG
 # minimize routing delay
